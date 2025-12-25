@@ -1,0 +1,56 @@
+{
+  "chapter": 1,
+  "title": "Arjuna Vishada Yoga - The Distress of Arjuna",
+  "slokas": [
+    {
+      "number": "1.1",
+      "sanskrit": "धृतराष्ट्र उवाच |\nधर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः |\nमामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ||",
+      "english_translation": "Dhritarashtra said: O Sanjaya, after gathering on the holy field of Kurukshetra, and desiring to fight, what did my sons and the sons of Pandu do?",
+      "telugu_translation": "ధృతరాష్ట్రుడు పలికెను: ఓ సంజయా, ధర్మభూమి అయిన కురుక్షేత్రంలో కూడియుండి, మరియు యుద్ధ కాంక్షతో ఉన్న నా పుత్రులు మరియు పాండు పుత్రులు ఏమి చేసిరి?",
+      "software_explanation": "Project Kickoff & Requirements Gathering: Like Dhritarashtra seeking information about the battlefield, a software project manager begins by asking crucial questions about project scope, team composition, and objectives. This represents the initial inquiry phase where stakeholders need clear visibility into project dynamics before making strategic decisions.",
+      "key_lesson": "Always seek complete information before making critical decisions in software projects.",
+      "modern_application": "Before launching any software project, conduct thorough stakeholder analysis and requirements gathering sessions.",
+      "illustration": "assets/images/shloka1_1.png"
+    },
+    {
+      "number": "1.2",
+      "sanskrit": "सञ्जय उवाच |\nदृष्ट्वा तु पाण्डवानीकं व्यूढं दुर्योधनस्तदा |\nआचार्यमुपसङ्गम्य राजा वचनमब्रवीत् ||",
+      "english_translation": "Sanjaya said: At that time, King Duryodhana, on seeing the array of the army of the Pandavas, approached his teacher Dronacharya and spoke these words.",
+      "telugu_translation": "సంజయుడు పలికెను: ఆ సమయంలో రాజు దుర్యోధనుడు పాండవుల సైన్యవ్యూహాన్ని చూసి, తన గురువు ద్రోణాచార్యుడు దగ్గరకు వెళ్లి ఈ మాటలు అన్నాడు.",
+      "software_explanation": "Competitive Analysis & Team Consultation: Duryodhana's reaction to seeing the Pandava army mirrors a software team leader analyzing competitor products or assessing project complexity. He immediately consults his mentor (Drona), similar to how developers consult senior architects when facing challenging technical scenarios.",
+      "key_lesson": "When facing complex challenges, immediately consult with experienced mentors and senior team members.",
+      "modern_application": "Conduct competitive analysis and seek guidance from technical leads when evaluating project complexity or new technologies.",
+      "illustration": "assets/images/shloka1_2.png"
+    },
+    {
+      "number": "1.3",
+      "sanskrit": "पश्यैतां पाण्डुपुत्राणामाचार्य महतीं चमूम् |\nव्यूढां द्रुपदपुत्रेण तव शिष्येण धीमता ||",
+      "english_translation": "O Teacher! Behold this huge army of Pandu's sons arrayed by your wise disciple, Dhrishtadyumna, the son of Drupada.",
+      "telugu_translation": "ఓ ఆచార్య! మీ తెలివైన శిష్యుడైన దృష్టద్యుమ్నుడు వ్యూహం చేసిన ఈ పాండవుల మహా సైన్యాన్ని చూడండి.",
+      "software_explanation": "Acknowledging Competition & Team Dynamics: Duryodhana acknowledges that his opponent's system (army) was designed by Drona's own student. In software terms, this represents recognizing that competitors may use similar technologies, frameworks, or methodologies. It highlights the importance of understanding team dynamics and knowledge transfer between mentors and students.",
+      "key_lesson": "Recognize and respect the capabilities of competitor teams, especially when they share similar technical backgrounds or training.",
+      "modern_application": "When competing with former colleagues or teams trained in similar methodologies, focus on innovation and execution rather than underestimating their capabilities.",
+      "illustration": "assets/images/shloka1_3.png"
+    },
+    {
+      "number": "1.4",
+      "sanskrit": "अत्र शूरा महेष्वासा भीमार्जुनसमा युधि |\nयुयुधानो विराटश्च द्रुपदश्च महारथः ||\nधृष्टकेतुश्चेकितानः काशिराजश्च वीर्यवान् |\nपुरुजित्कुन्तिभोजश्च शैब्यश्च नरपुङ्गवः ||\nयुधामन्युश्च विक्रान्त उत्तमौजाश्च वीर्यवान् |\nसौभद्रो द्रौपदेयाश्च सर्व एव महारथाः ||",
+      "english_translation": "In this army there are many heroic bowmen equal in fighting to Bhima and Arjuna: great fighters like Yuyudhana, Virata, and Drupada, Dhrishtaketu, Chekitana, Kashiraja, Purujit, Kuntibhoja, Shaibya, Yudhamanyu, Uttamauja, the son of Subhadra, and the sons of Draupadi. All these warriors are great chariot fighters.",
+      "telugu_translation": "ఈ సైన్యంలో భీమార్జునుల వలె యుద్ధంలో సమానులైన అనేక వీర ధనుర్ధరులు ఉన్నారు: యుయుధానుడు, విరాటుడు, ద్రుపదుడు, ధృష్టకేతుడు, చేకితానుడు, కాశీరాజు, పురుజిత్, కుంతిభోజుడు, శైబ్యుడు, యుధామన్యుడు, ఉత్తమౌజుడు, సౌభద్రుడు మరియు ద్రౌపదేయులు వంటి మహా యోధులు. వీరందరూ గొప్పరధ యోధులు.",
+      "software_explanation": "Team Composition & Skill Assessment: This detailed roster represents comprehensive team analysis - identifying key players, their specializations, and their proven track records. In software development, this translates to understanding your team's technical strengths: senior developers (Bhima/Arjuna level), specialists in different domains (frontend, backend, DevOps), and emerging talents. Each warrior mentioned represents different technical competencies essential for project success.",
+      "key_lesson": "Document and leverage the diverse skill sets within your development team for optimal project allocation.",
+      "modern_application": "Create detailed technical competency matrices for your team members to ensure proper role assignment and identify skill gaps.",
+      "illustration": "assets/images/shloka1_4.png"
+    },
+    {
+      "number": "1.5",
+      "sanskrit": "अस्माकं तु विशिष्टा ये तान्निबोध द्विजोत्तम |\nनायका मम सैन्यस्य संज्ञार्थं तान्ब्रवीमि ते ||",
+      "english_translation": "But for your information, O best of the brahmanas, let me tell you about the captains who are especially qualified to lead my military force.",
+      "telugu_translation": "కానీ ఓ బ్రాహ్మణోత్తమా, మీ సమాచారం కోసం, నా సైన్య బలానికి నాయకత్వం వహించడానికి ప్రత్యేకంగా అర్హత కలిగిన కెప్టెన్ల గురించి చెప్తాను.",
+      "software_explanation": "Leadership Structure & Resource Planning: Before diving into detailed execution, Duryodhana establishes the leadership hierarchy and resource allocation strategy. In software management, this represents the crucial phase of defining technical leadership roles, team structure, and resource distribution. A good project manager must clearly communicate the organizational structure and key decision-makers to ensure smooth project execution.",
+      "key_lesson": "Clearly define leadership roles and organizational structure before project execution begins.",
+      "modern_application": "Establish clear technical leadership hierarchy with defined roles and responsibilities for each team lead and architect.",
+      "illustration": "assets/images/shloka1_5.png"
+    }
+  ]
+}
