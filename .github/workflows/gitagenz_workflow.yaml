@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: version steps
         id: version_step
-        run: echo "version_number=${{inputs.version}}" >> $GITHUB_OUTPUT
+        run: echo "version_number=${inputs.version}" >> $GITHUB_OUTPUT
       - name: print the version
         run: echo "version: ${{inputs.version}}"
       - name: print the environment
