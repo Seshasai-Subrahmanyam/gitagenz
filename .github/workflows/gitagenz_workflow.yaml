@@ -17,16 +17,14 @@ jobs:
   
   job-3:
     runs-on: ubuntu-latest
-    needs:
-      - job-1
-      - job-2
+    needs: [job-1,job-2]
     steps:
       - name: logging that third job start
         run: echo "third job require job-1 and job-2 to be completed"
 
   build_and_deploy:
     runs-on: ubuntu-latest
-    needs: [job-1, job-2, job-3]
+    needs: [job-3]
     steps:
       - name: logging the workflow end
         run: echo "Workflow ended at $(date)"   
