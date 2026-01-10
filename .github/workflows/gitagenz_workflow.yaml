@@ -1,0 +1,11 @@
+name: gitgenz github workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: logging the workflow start
+        run: echo "Workflow started at $(date)"   
+    
