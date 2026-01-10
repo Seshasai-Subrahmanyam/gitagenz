@@ -1,9 +1,13 @@
 name: gitgenz github workflow
 on:
   workflow_dispatch:
+env:
+  WORKFLOW_SECRET: WORFLOW-SECRET
 
 jobs:
   job-1:
+    env:
+      JOB_SECRET: JOB-SECRET
     runs-on: ubuntu-latest
     steps:
       - name: logging the workflow start
@@ -13,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: logging the second job start
+        env:
+          STEP_SECRET: STEP-SECRET
         run: echo "second job started at $(date)"
   
   job-3:
