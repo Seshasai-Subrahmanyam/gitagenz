@@ -61,6 +61,7 @@ jobs:
     needs: [job-3, print-info]
     steps:
       - name: logging the workflow end
-        run: echo "Workflow ended at $(date) ${STEP_SECRET} ${JOB_SECRET} ${WORKFLOW_SECRET}"   
-        run: echo "version ${{needs.print-info.outputs.version_number}}"
+        run: |
+          echo "Workflow ended at $(date) ${STEP_SECRET} ${JOB_SECRET} ${WORKFLOW_SECRET}"   
+          echo "version ${{needs.print-info.outputs.version_number}}"
     
