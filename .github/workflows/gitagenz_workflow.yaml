@@ -19,7 +19,7 @@ jobs:
       - name: logging the second job start
         env:
           STEP_SECRET: STEP-SECRET
-        run: echo "second job started at $(date)"
+        run: echo "second job started at $(date) ${STEP_SECRET} ${JOB_SECRET} ${WORKFLOW_SECRET}"
   
   job-3:
     runs-on: ubuntu-latest
@@ -33,5 +33,5 @@ jobs:
     needs: [job-3]
     steps:
       - name: logging the workflow end
-        run: echo "Workflow ended at $(date)"   
+        run: echo "Workflow ended at $(date) ${STEP_SECRET} ${JOB_SECRET} ${WORKFLOW_SECRET}"   
     
