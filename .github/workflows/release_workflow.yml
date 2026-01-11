@@ -107,13 +107,19 @@ jobs:
         uses: actions/upload-artifact@v6.0.0
         with:
           name: aab-file
-          path: app/build/outputs/bundle/release/app-release.aab
+          path: build/app/outputs/bundle/release/app-release.aab
       
       - name: upload artifcat apk
         uses: actions/upload-artifact@v6.0.0
         with:
           name: apk-file
-          path: app/build/outputs/apk/release/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          
+      - name : download artifact apk
+        uses: actions/download-artifact@v7.0.0
+        with:
+          name: apk-file
+          
 
       
       
