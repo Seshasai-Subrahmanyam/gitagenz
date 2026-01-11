@@ -76,18 +76,20 @@ jobs:
         run: flutter pub get
 
       - name:  build aab
-        run: flutter build appbundle --release \
-              --build-name="${{inputs.build_version}}" \
-              --build-number="${{inputs.build_number}}" \
-              --dart-define=API_BASE_URL="${{steps.envcfg.outputs.api_base_url}}" \
-              --dart-define=API_SECRET="${{steps.envcfg.outputs.api_secret}}"
+        run: |
+          flutter build appbundle --release \
+            --build-name="${{inputs.build_version}}" \
+            --build-number="${{inputs.build_number}}" \
+            --dart-define=API_BASE_URL="${{steps.envcfg.outputs.api_base_url}}" \
+            --dart-define=API_SECRET="${{steps.envcfg.outputs.api_secret}}"
       
       - name: build apk
-        run: flutter build apk --release \
-              --build-name="${{inputs.build_version}}" \
-              --build-number="${{inputs.build_number}}" \
-              --dart-define=API_BASE_URL="${{steps.envcfg.outputs.api_base_url}}" \
-              --dart-define=API_SECRET="${{steps.envcfg.outputs.api_secret}}"
+        run: |
+          flutter build apk --release \
+            --build-name="${{inputs.build_version}}" \
+            --build-number="${{inputs.build_number}}" \
+            --dart-define=API_BASE_URL="${{steps.envcfg.outputs.api_base_url}}" \
+            --dart-define=API_SECRET="${{steps.envcfg.outputs.api_secret}}"
 
       - name: commit the changes
         if: ${{inputs.update_pubspec == 'Yes'}}
