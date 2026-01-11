@@ -28,6 +28,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: checkout the branch
@@ -44,6 +46,7 @@ jobs:
         uses: subosito/flutter-action@v2.14.0
         with:
           channel: "stable"
+          flutter-version: "3.38.6"
           cache: true
       
       - name: selecting env config (url + secret)
