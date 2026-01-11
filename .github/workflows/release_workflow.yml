@@ -1,0 +1,129 @@
+name: Release workflow
+on:
+  workflow_dispatch:
+    inputs:
+      deployment_environment:
+        required: true
+        description: "environment to deploy"
+        type: choice
+        options: ["dev","prod"]
+        default: "dev"
+      build_version:
+        required: true
+        type: string
+        default: "1.0.0"
+        description: "version of the app"
+      build_number:
+        required: true
+        type: string
+        default: "1"
+        description: "build number of the app"
+      update_pubspec:
+        required: true
+        description: "update version in pubspec.yaml file"
+        type: choice
+        default: "Yes"
+        options: ["Yes", "No"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout the branch
+        uses: actions/checkout@v6.0.2
+
+      - name: setup java (gradle build cache)
+        uses: actions/setup-java@v5.1.0
+        with:
+          cache: gradle
+          java-version: "21"
+          distribution: "temurin"
+      
+      - name: setup flutter
+        uses: subosito/flutter-action@2.14.0
+        with:
+          channel: "stable"
+          cache: true
+      
+      - name: selecting env config (url + secret)
+        id: envcfg
+        run: |
+          if ["${{inputs.deployment_environment}}" = "dev"]; then
+            echo "api_base_url=${{vars.UAT_URL}}" >> $GITHUB_OUTPUT
+            echo "api_secret=${{secrets.APP_SECRET}}" >> $GITHUB_OUTPUT
+            echo "suffix=uat">>$GITHUB_OUTPUT
+          else
+            echo "api_base_url=${{vars.PROD_URL}}" >> $GITHUB_OUTPUT
+            echo "api_secret=${{secrets.APP_SECRET}}" >> $GITHUB_OUTPUT
+            echo "suffix=prod">>$GITHUB_OUTPUT
+          fi  
+      - name: decode keystore and create key.properties
+        run: |
+          echo "${{secrets.ANDROID_KEYSTORE_BASE64}}" | base64 --decode > android/app/upload-keystore.jks
+          cat > android/key.properties <<EOF
+          storePassword=${{secrets.KEYSTORE_STORE_PASSWORD}}
+          keyPassword=${{secrets.KEYSTORE_KEY_PASSWORD}}
+          keyAlias=${{secrets.KEYSTORE_KEY_ALIAS}}
+          storeFile=upload-keystore.jks
+          EOF
+
+      - name: update pubspec.yml file for version number
+        run: |
+          sed -i 's/^version:.*/version: ${{inputs.build_version}}+${{inputs.build_number}}/' pubspec.yaml
+          
+      - name:  pub get 
+        run: flutter pub get
+
+      - name:  build aab
+        run: flutter build appbundle --release \
+                --build-name "${{inputs.build_version}}" \
+                --build-number "${{inputs.build_number}}" \
+                --dart-define=API_BASE_URL="${{steps.envcfg.outputs.api_base_url}}" \
+                --dart-define=API_SECRET="${{steps.envcfg.outputs.api_secret}}"
+      
+      - name: build apk
+        run: flutter build apk --release \
+                --build-name "${{inputs.build_version}}" \
+                --build-number "${{inputs.build_number}}" \
+                --dart-define=API_BASE_URL="${{steps.envcfg.outputs.api_base_url}}" \
+                --dart-define=API_SECRET="${{steps.envcfg.outputs.api_secret}}"
+
+      - name: commit the changes
+        if: ${{inputs.update_pubspec == 'Yes'}}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pubspec.yaml
+          git commit -m "Update pubspec.yaml for version ${{inputs.build_version}}+${{inputs.build_number}} in environment ${{inputs.deployment_environment}}" || exit 0
+          git push
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v6.0.0
+        with:
+          name: aab-file
+          path: app/build/outputs/bundle/release/app-release.aab
+      
+      - name: upload artifcat apk
+        uses: actions/upload-artifact@v6.0.0
+        with:
+          name: apk-file
+          path: app/build/outputs/apk/release/app-release.apk
+
+      
+      
+      
+
+
+          
+
+
+          
+
+
+
+
+
+
+
+
