@@ -41,7 +41,7 @@ jobs:
           distribution: "temurin"
       
       - name: setup flutter
-        uses: subosito/flutter-action@2.14.0
+        uses: subosito/flutter-action@v2.14.0
         with:
           channel: "stable"
           cache: true
